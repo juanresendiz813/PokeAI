@@ -48,8 +48,11 @@ def answer_question(request):
             HumanMessage(content=question)
         ]
         chat(messages)
-        answer = chat(messages)
+        messages = chat(messages)
 
-        return render(request, 'pokemon/answer.html', {'answer': answer})
+        response_message = messages.content
+        response_text = response_message
+
+        return render(request, 'pokemon/answer.html', {'answer': response_text})
 
     return render(request, 'pokemon/question.html')
