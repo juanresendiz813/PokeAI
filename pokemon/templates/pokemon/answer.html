@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pokemon Q&A</title>
+</head>
+<body>
+    <h2>Answer:</h2>
+    <p>{{ answer }}</p>
+    <h2>Ask a Pokémon Question to the PokeAI</h2>
+    <div id="question-form">
+        <form method="post">
+            {% csrf_token %}
+            <label for="question">Enter your question:</label>
+            <input type="text" id="question" name="question" required>
+            <button type="submit">Ask</button>
+        </form>
+    </div>
+</body>
+</html>
